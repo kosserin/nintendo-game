@@ -1314,7 +1314,7 @@ header {
 header .header-hero {
   width: 70vw;
   height: 85vh;
-  background: url("nintendo-game/assets/hero.jpg") no-repeat center;
+  background: url("https://kosserin.github.io/nintendo-game/assets/hero.jpg") no-repeat center;
   background-size: cover;
   position: relative;
   -webkit-transform: translateY(50px);
