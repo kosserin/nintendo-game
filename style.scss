@@ -1,0 +1,21 @@
+@import "./styles/colors";
+@import "./styles/media-queries";
+@import "./styles/main";
+@import "./styles/header";
+@import "./styles/footer";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica", sans-serif;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+}
