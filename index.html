@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./assets/5-55615_retro-mario-png-super-mario-bros-3-mario.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="search-background-from-nav-right"></div>
     <div class="search-background"></div>
     <div class="search-bar-container">
         <div class="first-search-row">
@@ -216,8 +218,65 @@
             <img src="./assets/en-e10.svg" alt="">
         </div>
     </header>
-    <main></main>
+    <main>
+        <section id="game-heading">
+            <div class="left-heading">
+            <h3 class="console-label">Nintendo Switch</h3>
+            <h1>Stardew Valley</h1>
+            <span class="available-span">Available now</span>
+            <button>
+                <i class="far fa-heart"></i>
+            <p>Add to Wish List</p></button>
+            </div>
+            <div class="right-heading">
+                <div class="right-heading-first-row">
+                <span class="game-price">$14.99</span>
+                <a class="animated-button" href="#">Buy digital <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="coin-text-container">
+                    <img src="./assets/gold-points.png" alt="">
+                    <a href="#">Eligible for up to 75 coins</a>
+                </div>
+            </div>
+        </section>
+        <section id="screenshot-lightbox">
+            <div class="screenshot-container">
+                <div class="first-container">
+                    <img id="first-img" src="./assets/screenshot01.jpg" alt="">
+                    <img id="second-img" src="./assets/screenshot02.jpg" alt="">
+                    <img id="third-img" src="./assets/screenshot03.jpg" alt="">
+                    <img id="fourth-img" src="./assets/screenshot04.jpg" alt="">
+                    <img id="fifth-img" src="./assets/screenshot05.jpg" alt="">
+                </div>
+                <div class="second-container">
+                    <img id="sixth-img" src="./assets/screenshot06.jpg" alt="">
+                </div>
+            </div>
+            <div class="buttons">
+                <i class="fas fa-caret-left"></i>
+                <div class="dot first-dot">
+                    <div class="f"></div>
+                    <div class="s"></div>
+                    <div class="t"></div>
+                </div>
+                <div class="dot second-dot">
+                    <div class="f"></div>
+                    <div class="s"></div>
+                    <div class="t"></div>
+                </div>
+                <i class="fas fa-caret-right"></i>
+            </div>
+            <div id="lightbox-modal">
+                <img src="./assets/screenshot01.jpg" alt="">
+                <div class="next-prev-container">
+                    <i class="fas fa-caret-left"></i>
+                <i class="fas fa-caret-right"></i>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="app.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

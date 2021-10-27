@@ -45,9 +45,11 @@
 }
 
 .search-background {
+  bottom: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   background: rgba(0, 0, 0, 0.2);
   z-index: 4;
   opacity: 0;
@@ -55,6 +57,25 @@
   pointer-events: none;
 
   &.show-search-background {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    cursor: pointer;
+  }
+}
+
+.search-background-from-nav-right {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: none;
+
+  &.show-search-background {
+    display: block;
+    z-index: 15;
     opacity: 1;
     visibility: visible;
     pointer-events: all;
@@ -199,7 +220,7 @@
             font-weight: 600;
 
             &:hover {
-              color: rgb(138, 0, 0);
+              color: $darkred;
               text-decoration: underline;
             }
           }
@@ -225,6 +246,7 @@
 
         @include miniLaptop {
           width: 100%;
+          justify-content: space-between;
           grid-template-areas:
             "a a b b"
             "c c c c";
@@ -343,9 +365,8 @@
 nav {
   display: flex;
   width: 100vw;
-  position: relative;
   height: 15vh;
-  position: absolute;
+  position: fixed;
   z-index: 3;
   background: $white;
   flex-direction: column;
@@ -354,7 +375,6 @@ nav {
 
   @include tablet {
     height: 8vh;
-    border-bottom: none;
   }
 
   .first-nav-row {
@@ -376,6 +396,7 @@ nav {
         height: 100%;
         img {
           height: 100%;
+          width: 120px;
         }
       }
 
@@ -634,8 +655,8 @@ nav {
   width: 100vw;
   height: 100vh;
   background: transparent;
-  position: absolute;
-  top: 0;
+  position: fixed;
+  bottom: 0;
   left: 0;
   z-index: 2;
   pointer-events: none;
@@ -681,6 +702,7 @@ nav {
 
     @include phone {
       padding: 0 5vw;
+      height: 10vh;
     }
   }
 
@@ -758,7 +780,7 @@ nav {
     pointer-events: none;
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 8vh;
     width: 60vw;
@@ -954,7 +976,7 @@ header {
   }
 
   @include phone {
-    height: 40vh;
+    height: 35vh;
   }
 
   .header-hero {
@@ -979,10 +1001,6 @@ header {
       transform: translateY(0);
       height: 100%;
       width: 100vw;
-    }
-
-    @include tablet {
-      background-size: cover;
     }
 
     img {

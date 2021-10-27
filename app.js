@@ -1,14 +1,22 @@
 const hideNavOnScroll = () =>{
     const nav = document.querySelector('nav');
     const navBackground = document.querySelector('.nav-background');
+    const header = document.querySelector('header')
 
     window.addEventListener('scroll', () =>{
-        if(window.pageYOffset > nav.clientHeight){
+        if(window.pageYOffset > nav.clientHeight && window.matchMedia('(min-width:768px)').matches){
             nav.classList.add('hide-nav');
+            console.log('minwidth')
             navBackground.classList.remove('show-nav-background');
-        } else{
+        } else if(window.matchMedia('(max-width:768px)').matches && window.pageYOffset > header.clientHeight){
+            nav.classList.add('hide-nav');
+            console.log('maxwidth')
+            navBackground.classList.remove('show-nav-background');
+        }
+         else{
             nav.classList.remove('hide-nav');
         }
+
     })
 }
 
@@ -94,7 +102,8 @@ const searchBarFunction = () =>{
     const searchBackground = document.querySelector('.search-background');
     const searchButtonTablet = document.querySelector('.nav-tablet li button');
     const searchButtonFromNavRight = document.querySelector('.nav-right-tablet .upper-list li button');
-
+    const searchBackgroundFromNavRight = document.querySelector('.search-background-from-nav-right');
+    
     const searchButton = () =>{
         searchBackground.classList.toggle('show-search-background');
         searchBarContainer.classList.toggle('show-search-bar-container');
@@ -113,18 +122,23 @@ const searchBarFunction = () =>{
     })
 
     searchButtonFromNavRight.addEventListener('click', () =>{
-        searchBackground.classList.add('show-search-background');
+        searchBackgroundFromNavRight.classList.add('show-search-background');
         searchBarContainer.classList.toggle('show-search-bar-container');
 
-        searchBackground.addEventListener('click', () =>{
-            searchBackground.classList.remove('show-search-background');
+        searchBackgroundFromNavRight.addEventListener('click', () =>{
+            searchBackgroundFromNavRight.classList.remove('show-search-background');
             searchBarContainer.classList.remove('show-search-bar-container');
         })
     })
 
     closeSearchButton.addEventListener('click', () =>{
         searchBarContainer.classList.remove('show-search-bar-container');
-        searchBackground.classList.remove('show-search-background');
+        searchBackgroundFromNavRight.classList.remove('show-search-background');
+        if(window.matchMedia('(max-width:768px)').matches){
+            searchBackground.classList.add('show-search-background');   
+        } else{
+            searchBackground.classList.remove('show-search-background');
+        }
     })
 }
 

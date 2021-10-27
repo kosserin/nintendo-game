@@ -1,7 +1,527 @@
 main {
   width: 100vw;
+  background: #ffffff;
+  padding: 150px 0;
+}
+
+@media screen and (max-width: 970px) {
+  main {
+    padding: 80px 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    padding: 50px 0;
+  }
+}
+
+main #game-heading {
+  width: 80vw;
+  margin: 0 auto 50px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #434242;
+  position: relative;
+}
+
+@media screen and (max-width: 1280px) {
+  main #game-heading {
+    width: 95vw;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  main #game-heading {
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main #game-heading {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+main #game-heading .left-heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+main #game-heading .left-heading .console-label {
+  border-bottom: 1px solid #e60012;
+  padding-bottom: 0px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: lighter;
+  font-size: 1rem;
+  position: absolute;
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
+}
+
+main #game-heading .left-heading h1 {
+  font-size: 1.8rem;
+}
+
+@media screen and (max-width: 768px) {
+  main #game-heading .left-heading h1 {
+    font-size: 1.5rem;
+    margin: 5px 0;
+  }
+}
+
+main #game-heading .left-heading span {
+  margin: 15px 0 10px 0;
+  font-size: 0.9rem;
+}
+
+main #game-heading .left-heading button {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e60012;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  main #game-heading .left-heading button {
+    margin: 10px 0 14px 0;
+    font-size: 0.9rem;
+    padding-bottom: 0;
+  }
+}
+
+main #game-heading .left-heading button i {
+  font-size: 1.3rem;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  main #game-heading .left-heading button i {
+    font-size: 1rem;
+  }
+}
+
+main #game-heading .left-heading button:hover p {
+  border-bottom: 2px solid #8a0000;
+  color: #8a0000;
+}
+
+main #game-heading .left-heading button:hover i {
+  color: #8a0000;
+}
+
+main #game-heading .right-heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main #game-heading .right-heading .right-heading-first-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media screen and (max-width: 970px) {
+  main #game-heading .right-heading .right-heading-first-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main #game-heading .right-heading .right-heading-first-row {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+main #game-heading .right-heading .right-heading-first-row .game-price {
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+@media screen and (max-width: 970px) {
+  main #game-heading .right-heading .right-heading-first-row .game-price {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main #game-heading .right-heading .right-heading-first-row .game-price {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+}
+
+main #game-heading .right-heading .right-heading-first-row a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-decoration: none;
+  color: #ffffff;
+  background: #e60012;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 220px;
+  margin-left: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  main #game-heading .right-heading .right-heading-first-row a {
+    margin-left: 0;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+main #game-heading .right-heading .coin-text-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 220px;
+  margin: 10px 0 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  main #game-heading .right-heading .coin-text-container {
+    margin: 10px auto 0 0;
+  }
+}
+
+main #game-heading .right-heading .coin-text-container a {
+  text-decoration: none;
+  color: #434242;
+}
+
+main #game-heading .right-heading .coin-text-container a:hover {
+  border-bottom: 2px solid #434242;
+}
+
+main #game-heading .right-heading .coin-text-container img {
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+main #screenshot-lightbox {
+  background: #d6f0fa;
+  padding: 20px 0 0 0;
+}
+
+main #screenshot-lightbox .screenshot-container {
+  width: 80vw;
+  height: 50vh;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1180px) {
+  main #screenshot-lightbox .screenshot-container {
+    width: 95vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main #screenshot-lightbox .screenshot-container {
+    height: 120vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main #screenshot-lightbox .screenshot-container {
+    height: 80vh;
+  }
+}
+
+main #screenshot-lightbox .screenshot-container div {
+  -webkit-transition: all 1000ms ease;
+  transition: all 1000ms ease;
+}
+
+main #screenshot-lightbox .screenshot-container div img {
+  border: 1px solid #434242;
+  cursor: pointer;
+}
+
+main #screenshot-lightbox .screenshot-container .first-container {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0%;
+  position: absolute;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 5px;
+      grid-template-areas: "a a b c" "a a d e";
+}
+
+@media screen and (max-width: 768px) {
+  main #screenshot-lightbox .screenshot-container .first-container {
+        grid-template-areas: "a a a a" "a a a a" "b b c c" "d d e e";
+  }
+}
+
+main #screenshot-lightbox .screenshot-container .first-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main #screenshot-lightbox .screenshot-container .first-container #first-img {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: a;
+}
+
+main #screenshot-lightbox .screenshot-container .first-container #second-img {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: b;
+}
+
+main #screenshot-lightbox .screenshot-container .first-container #third-img {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: c;
+}
+
+main #screenshot-lightbox .screenshot-container .first-container #fourth-img {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: d;
+}
+
+main #screenshot-lightbox .screenshot-container .first-container #fifth-img {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: e;
+}
+
+main #screenshot-lightbox .screenshot-container .second-container {
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+
+main #screenshot-lightbox .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0;
+}
+
+main #screenshot-lightbox .buttons i {
+  font-size: 5rem;
+  margin: 0 15px;
+  cursor: pointer;
+  color: #0b2b6b;
+}
+
+@media screen and (max-width: 768px) {
+  main #screenshot-lightbox .buttons i {
+    display: none;
+  }
+}
+
+main #screenshot-lightbox .buttons .dot {
+  width: 15px;
+  height: 15px;
+  background: #0b2b6b;
+  border-radius: 50%;
+  margin: 0 15px;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+  cursor: pointer;
+}
+
+main #screenshot-lightbox .buttons .dot:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+}
+
+main #screenshot-lightbox .buttons .dot.active {
+  position: relative;
+}
+
+main #screenshot-lightbox .buttons .dot.active:hover {
+  cursor: -webkit-grab;
+  cursor: grab;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+main #screenshot-lightbox .buttons .dot.active div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+main #screenshot-lightbox .buttons .dot.active .f {
+  width: 15px;
+  height: 15px;
+  background: #0b2b6b;
+  z-index: 4;
+}
+
+main #screenshot-lightbox .buttons .dot.active .s {
+  width: 20px;
+  height: 20px;
+  background: #d6f0fa;
+  z-index: 3;
+}
+
+main #screenshot-lightbox .buttons .dot.active .t {
+  width: 25px;
+  height: 25px;
+  background: #0b2b6b;
+  z-index: 2;
+}
+
+main #screenshot-lightbox #lightbox-modal {
+  position: fixed;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
   height: 100vh;
-  background: coral;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+main #screenshot-lightbox #lightbox-modal.show-modal {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+main #screenshot-lightbox #lightbox-modal img {
+  min-width: 60vw;
+  min-height: 60vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 600px) {
+  main #screenshot-lightbox #lightbox-modal img {
+    min-width: 40vw;
+    min-height: 40vh;
+  }
+}
+
+main #screenshot-lightbox #lightbox-modal i.fa-caret-left,
+main #screenshot-lightbox #lightbox-modal i.fa-caret-right {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1rem;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+main #screenshot-lightbox #lightbox-modal i.fa-caret-left.fa-caret-right,
+main #screenshot-lightbox #lightbox-modal i.fa-caret-right.fa-caret-right {
+  right: 20px;
 }
 
 .fontAwesome {
@@ -9,9 +529,11 @@ main {
 }
 
 .search-background {
+  bottom: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   background: rgba(0, 0, 0, 0.2);
   z-index: 4;
   opacity: 0;
@@ -20,6 +542,25 @@ main {
 }
 
 .search-background.show-search-background {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.search-background-from-nav-right {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: none;
+}
+
+.search-background-from-nav-right.show-search-background {
+  display: block;
+  z-index: 15;
   opacity: 1;
   visibility: visible;
   pointer-events: all;
@@ -247,6 +788,9 @@ main {
 @media screen and (max-width: 1180px) {
   .search-bar-container .second-search-row .find-game .grid-games {
     width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
         grid-template-areas: "a a b b" "c c c c";
   }
 }
@@ -399,9 +943,8 @@ nav {
   display: -ms-flexbox;
   display: flex;
   width: 100vw;
-  position: relative;
   height: 15vh;
-  position: absolute;
+  position: fixed;
   z-index: 3;
   background: #ffffff;
   -webkit-box-orient: vertical;
@@ -416,7 +959,6 @@ nav {
 @media screen and (max-width: 768px) {
   nav {
     height: 8vh;
-    border-bottom: none;
   }
 }
 
@@ -453,6 +995,7 @@ nav .first-nav-row .first-left-side a {
 
 nav .first-nav-row .first-left-side a img {
   height: 100%;
+  width: 120px;
 }
 
 nav .first-nav-row .first-left-side .input-click-container {
@@ -852,8 +1395,8 @@ nav .dropdown-link .fa-times:hover {
   width: 100vw;
   height: 100vh;
   background: transparent;
-  position: absolute;
-  top: 0;
+  position: fixed;
+  bottom: 0;
   left: 0;
   z-index: 2;
   pointer-events: none;
@@ -916,6 +1459,7 @@ nav .dropdown-link .fa-times:hover {
 @media screen and (max-width: 768px) and (max-width: 600px) {
   .nav-tablet {
     padding: 0 5vw;
+    height: 10vh;
   }
 }
 
@@ -1030,7 +1574,7 @@ nav .dropdown-link .fa-times:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 8vh;
     width: 60vw;
@@ -1307,7 +1851,7 @@ header {
 
 @media screen and (max-width: 600px) {
   header {
-    height: 40vh;
+    height: 35vh;
   }
 }
 
@@ -1342,12 +1886,6 @@ header .header-hero {
             transform: translateY(0);
     height: 100%;
     width: 100vw;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  header .header-hero {
-    background-size: cover;
   }
 }
 
