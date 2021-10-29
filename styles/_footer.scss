@@ -1,2 +1,249 @@
 @import "./colors";
 @import "./media-queries";
+
+footer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+
+  #footer-links {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 2vh 15vw;
+    background: $gray;
+
+    @include tablet {
+      display: none;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        margin: 8px 0;
+        a {
+          text-decoration: none;
+          color: $dark;
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          &.heading-link {
+            font-size: 1rem;
+            font-weight: 600;
+          }
+
+          font-weight: 400;
+          font-size: 0.75rem;
+        }
+      }
+    }
+
+    & > a {
+      text-decoration: none;
+      font-weight: 600;
+      color: $dark;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  #footer-tablet-links {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+    }
+
+    .link-container {
+      padding: 0 15px;
+      position: relative;
+
+      .link-title {
+        padding: 15px;
+        background: rgba($dark, 0.03);
+        border-top: 1px solid $gray;
+        border-bottom: 1px solid $gray;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+          font-size: 1.3rem;
+          font-weight: 600;
+          color: $blue;
+        }
+
+        .arrows {
+          display: flex;
+
+          i {
+            color: $blue;
+            font-size: 2rem;
+
+            &.fa-angle-up {
+              display: none;
+            }
+
+            &.toggle-arrow-up {
+              display: inline-block;
+            }
+
+            &.toggle-arrow-down {
+              display: none;
+            }
+          }
+        }
+      }
+
+      #link-title-tag {
+        text-decoration: none;
+      }
+
+      .link-list {
+        position: absolute;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0 10px 20px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        width: 0;
+        height: 0;
+        transition: all 0ms ease;
+
+        li {
+          margin: 8px 0;
+
+          a {
+            text-decoration: none;
+            color: $dark;
+            font-size: 1.1rem;
+          }
+        }
+      }
+
+      .show-link {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        width: 100%;
+        height: fit-content;
+        transition: height, opacity 2000ms ease;
+      }
+    }
+  }
+
+  #footer-contact {
+    background: $dark;
+    padding-bottom: 25px;
+
+    @include tablet {
+      padding-bottom: 100px;
+    }
+    .grid-footer {
+      width: fit-content;
+      grid-column-gap: 20px;
+      grid-row-gap: 10px;
+      margin: 30px auto 10px auto;
+      display: grid;
+      color: $gray;
+      grid-template-areas:
+        "a a b b c"
+        "d d d d c";
+
+      a:first-of-type {
+        grid-area: a;
+      }
+
+      a:last-of-type {
+        grid-area: b;
+      }
+
+      a {
+        color: $gray;
+        text-decoration: none;
+        font-weight: 600;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      img {
+        grid-area: c;
+        height: 100%;
+        width: 60px;
+
+        @include fold {
+          width: 40px;
+        }
+      }
+
+      .footer-social {
+        grid-area: d;
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet {
+          justify-content: center;
+        }
+
+        i {
+          font-size: 2rem;
+          padding: 0.5rem;
+          border-radius: 5px;
+
+          @include tablet {
+            margin: 0 5px;
+          }
+
+          &.fa-facebook {
+            background: rgb(71, 71, 255);
+          }
+
+          &.fa-instagram {
+            background: rgb(255, 65, 97);
+          }
+
+          &.fa-twitter {
+            background: rgb(61, 156, 194);
+          }
+
+          &.fa-youtube {
+            background: red;
+          }
+        }
+      }
+    }
+
+    small {
+      color: $gray;
+      text-align: center;
+      width: 500px;
+      margin: 10px auto;
+      display: block;
+      font-size: 0.75rem;
+
+      @include phone {
+        width: 300px;
+      }
+
+      a {
+        text-decoration: none;
+        color: $gray;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

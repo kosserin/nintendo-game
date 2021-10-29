@@ -1,10 +1,31 @@
 @import "./colors";
 @import "./media-queries";
 
+@mixin animatedButton {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  color: $white;
+  background: $red;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 220px;
+  margin-left: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+
+  @include tablet {
+    margin-left: 0;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+}
+
 main {
   width: 100vw;
   background: $white;
-  padding: 150px 0;
+  padding: 150px 0 0 0;
 
   @include mini {
     padding: 80px 0;
@@ -141,24 +162,7 @@ main {
         }
 
         a {
-          display: flex;
-          justify-content: space-between;
-          text-decoration: none;
-          color: $white;
-          background: $red;
-          padding: 1rem;
-          border-radius: 10px;
-          width: 220px;
-          margin-left: 10px;
-          font-weight: 600;
-          font-size: 1.2rem;
-
-          @include tablet {
-            margin-left: 0;
-            width: 100%;
-            padding: 1rem;
-            font-size: 1.1rem;
-          }
+          @include animatedButton;
         }
       }
 
@@ -221,6 +225,13 @@ main {
         img {
           border: 1px solid $dark;
           cursor: pointer;
+          opacity: 0.9;
+          transition: all 150ms ease;
+
+          &:hover {
+            opacity: 1;
+            transition: all 150ms ease;
+          }
         }
       }
 
@@ -289,6 +300,13 @@ main {
         margin: 0 15px;
         cursor: pointer;
         color: $blue;
+        transition: all 250ms ease;
+
+        &:hover {
+          transform: scale(1.2);
+          color: $lightblue;
+          transition: all 250ms ease;
+        }
 
         @include tablet {
           display: none;
@@ -306,11 +324,13 @@ main {
 
         &:hover {
           transform: scale(1.2);
+          background: $lightblue;
           transition: all 250ms ease;
         }
 
         &.active {
           position: relative;
+          transition: all 250ms ease;
 
           &:hover {
             cursor: grab;
@@ -396,6 +416,667 @@ main {
 
         &.fa-caret-right {
           right: 20px;
+
+          @include tablet {
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  #explore {
+    padding: 15vh 10vw;
+    color: $dark;
+
+    @include miniLaptop {
+      padding: 10vh 2vw;
+    }
+
+    @include tablet {
+      padding: 10vh 5vw 10vh 2vw;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    p {
+      line-height: 25px;
+
+      @include tablet {
+        font-size: 0.9rem;
+      }
+    }
+
+    a {
+      @include animatedButton;
+      margin: 0;
+      min-width: fit-content;
+      align-items: center;
+      margin-top: 20px;
+
+      @include tablet {
+        width: fit-content;
+      }
+
+      i {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  #grid-information {
+    padding: 0vh 10vw;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-areas:
+      "a b"
+      "c d"
+      "e f"
+      "g f"
+      "h i"
+      "h i"
+      "j j";
+
+    @include miniLaptop {
+      padding: 0vh 2vw;
+    }
+
+    @include tablet {
+      grid-gap: 0;
+      padding: 0vh 5vw 0vh 2vw;
+      grid-template-areas:
+        "a a"
+        "c c"
+        "e e"
+        "g g"
+        "b b"
+        "d d"
+        "f f"
+        "h h"
+        "i i"
+        "j j";
+    }
+
+    .colored-background {
+      background: $gray;
+    }
+
+    .grid-container {
+      padding: 15px 0;
+      display: flex;
+      align-items: center;
+      color: $dark;
+
+      .left-side {
+        margin-right: 30px;
+        display: flex;
+        align-items: center;
+
+        i {
+          font-size: 1.8rem;
+          margin: 0 15px;
+        }
+
+        span,
+        h2,
+        p {
+          font-weight: 600;
+          font-size: clamp(1rem, 1.2vw+1, 1.2vw);
+        }
+      }
+
+      span {
+        font-size: clamp(0.9rem, 1vw+1, 1vw);
+      }
+
+      h2 {
+        font-weight: 600;
+        font-size: clamp(1rem, 1.2vw+1, 1.2vw);
+      }
+    }
+
+    #release-grid {
+      grid-area: a;
+    }
+
+    #developer-grid {
+      grid-area: b;
+    }
+
+    #players-grid {
+      grid-area: c;
+    }
+
+    #size-grid {
+      grid-area: d;
+    }
+
+    #genre-grid {
+      grid-area: e;
+    }
+
+    #languages-grid {
+      grid-area: f;
+      display: flex;
+      align-items: flex-start;
+
+      @include tablet {
+        margin-bottom: 15px;
+      }
+
+      .left-side {
+        align-items: flex-start;
+        p {
+          .languages-text {
+            font-weight: normal;
+            font-size: clamp(0.9rem, 1vw+1, 1vw);
+            margin-left: 30px;
+          }
+        }
+      }
+    }
+
+    #publisher-grid {
+      grid-area: g;
+    }
+
+    #play-modes-grid {
+      grid-area: h;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px 60px;
+
+      .first-row {
+        text-align: left;
+      }
+
+      .second-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+        width: 100%;
+        justify-content: space-between;
+        margin: 15px 0;
+        .play-mode {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          align-items: center;
+
+          &:first-of-type {
+            align-items: flex-start;
+          }
+
+          &:last-of-type {
+            align-items: center;
+          }
+
+          img {
+            width: 80px;
+            height: 80px;
+          }
+
+          span {
+            text-align: center;
+
+            &:last-of-type {
+              text-align: right;
+            }
+          }
+        }
+      }
+
+      .third-row {
+        font-size: 0.9rem;
+        a {
+          color: $red;
+        }
+      }
+    }
+
+    #esrb-grid {
+      grid-area: i;
+      flex-direction: column;
+      padding: 15px 50px;
+      align-items: flex-start;
+
+      @include tablet {
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+
+      h2 {
+        margin-bottom: 15px;
+      }
+
+      .esrb-container {
+        display: grid;
+        grid-gap: 15px;
+        text-decoration: none;
+        color: $dark;
+        align-items: center;
+        grid-template-areas:
+          "a b b"
+          "a b b"
+          "a c c";
+
+        img {
+          grid-area: a;
+          height: 80px;
+        }
+
+        small {
+          width: 200px;
+          font-size: 0.75rem;
+        }
+
+        small:first-of-type {
+          grid-area: b;
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: $dark;
+          }
+        }
+
+        small:last-of-type {
+          grid-area: c;
+        }
+      }
+    }
+
+    #online-grid {
+      grid-area: j;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+
+      @include tablet {
+        justify-items: flex-start;
+      }
+
+      .first-row {
+        display: flex;
+        grid-gap: 0px;
+
+        @include tablet {
+          flex-direction: column;
+        }
+
+        img {
+          height: 60px;
+          align-self: flex-start;
+        }
+
+        p {
+          margin: 0 30px;
+          width: 400px;
+
+          @include miniLaptop {
+            width: 300px;
+          }
+
+          @include tablet {
+            width: 100%;
+            margin: 30px 0;
+          }
+        }
+
+        a {
+          position: relative;
+          text-decoration: none;
+          color: $dark;
+          font-weight: 600;
+          font-size: clamp(1.1rem, 1.3vw+1, 1.3vw);
+          transition: all 250ms ease;
+          height: fit-content;
+
+          @include tablet {
+            width: fit-content;
+          }
+
+          i {
+            margin-left: 15px;
+            position: absolute;
+          }
+
+          &:hover {
+            border-bottom: 2px solid $dark;
+            opacity: 1;
+            transition: opacity 250ms ease;
+          }
+        }
+      }
+
+      .second-row {
+        margin: 50px 0 0 0;
+        display: grid;
+        align-items: center;
+        grid-template-areas: "a b c";
+
+        @include tablet {
+          grid-gap: 20px;
+          grid-template-areas:
+            "a a a a"
+            "b b c c";
+        }
+
+        p {
+          font-weight: 600;
+          font-size: 1.3rem;
+          margin-right: 50px;
+          grid-area: a;
+        }
+
+        a {
+          @include animatedButton;
+          width: fit-content;
+          font-size: clamp(1rem, 1vw+1, 1vw);
+          animation-duration: 1s;
+          animation-delay: 0;
+
+          &:first-of-type {
+            grid-area: b;
+          }
+
+          &:last-of-type {
+            grid-area: c;
+          }
+        }
+      }
+    }
+  }
+
+  #small-copyright-container {
+    position: relative;
+    margin: 10vh 0;
+    padding: 0vh 10vw;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10vh;
+      width: 80vw;
+      transform: translateX(10vw);
+      height: 2px;
+      background: $gray;
+
+      @include miniLaptop {
+        width: 96vw;
+        transform: translateX(2vw);
+      }
+
+      @include tablet {
+        width: 90vw;
+        transform: translateX(5vw);
+      }
+    }
+
+    @include miniLaptop {
+      padding: 0vh 2vw;
+    }
+
+    @include tablet {
+      padding: 0vh 5vw 0vh 2vw;
+    }
+
+    small {
+      font-size: 0.75rem;
+      color: $dark;
+      display: block;
+      margin-bottom: 30px;
+
+      a {
+        color: $red;
+
+        &:hover {
+          color: rgba($red, 0.8);
+        }
+      }
+    }
+  }
+
+  #other-games {
+    padding-bottom: 150px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0vh;
+      width: 80vw;
+      transform: translateX(10vw);
+      height: 2px;
+      background: $gray;
+
+      @include miniLaptop {
+        width: 96vw;
+        transform: translateX(2vw);
+      }
+
+      @include tablet {
+        width: 90vw;
+        transform: translateX(5vw);
+      }
+    }
+    h1 {
+      padding: 10vh 10vw 5vh 10vw;
+      color: $dark;
+      font-size: clamp(1.2rem, 2vw+1, 2vw);
+
+      @include miniLaptop {
+        padding: 5vh 2vw;
+      }
+
+      @include tablet {
+        padding: 5vh 10vw 5vh 10vw;
+      }
+    }
+
+    #games {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-gap: 2vw;
+      padding: 0 2vw;
+
+      @include phone {
+        padding: 0 10vw;
+        grid-gap: 15vw;
+      }
+
+      &:hover .fa-angle-left,
+      &:hover .fa-angle-right {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+      }
+
+      .game-container {
+        display: flex;
+        flex-direction: column;
+        color: $dark;
+        width: 17.8vw;
+        transition: all 1000ms ease;
+
+        @include miniLaptop {
+          width: 22.75vw;
+        }
+
+        @include mini {
+          width: 33vw;
+          transition: all 500ms ease;
+        }
+
+        @include tablet {
+          width: 47vw;
+        }
+
+        @include phone {
+          width: 80vw;
+        }
+
+        img {
+          border-radius: 5px;
+          transition: all 250ms ease;
+          width: 100%;
+
+          &:hover {
+            filter: brightness(70%);
+            transition: all 250ms ease;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          font-weight: 600;
+          color: $dark;
+          font-size: 1.2rem;
+          margin: 20px 0;
+        }
+
+        .price {
+          font-weight: 600;
+          font-size: 1.2rem;
+          margin-bottom: 20px;
+        }
+
+        .game-bottom {
+          display: flex;
+          justify-content: space-between;
+
+          .console {
+            padding-bottom: 5px;
+            border-bottom: 2px solid $red;
+            font-size: 0.9rem;
+          }
+
+          i {
+            color: $red;
+            font-size: 1.5rem;
+            cursor: pointer;
+          }
+        }
+      }
+
+      & > i {
+        position: absolute;
+        height: 100%;
+        width: 40px;
+        background: rgba(#000000, 0.8);
+        top: 50%;
+        transform: translateY(-50%);
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        font-size: 2rem;
+        cursor: pointer;
+        transition: all 250ms ease;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+
+        @include tablet {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: all;
+          height: 20%;
+          width: 50px;
+          top: 30%;
+        }
+
+        &:hover {
+          background: #000000;
+          transition: all 250ms ease;
+        }
+
+        &.fa-angle-left {
+          left: 0%;
+        }
+
+        &.fa-angle-right {
+          right: 20px;
+
+          @include tablet {
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  #recently-viewed {
+    padding: 10vh 10vw;
+
+    h1 {
+      color: $dark;
+      padding-bottom: 5vh;
+    }
+
+    .recently-viewed-game {
+      display: flex;
+      flex-direction: column;
+      width: 250px;
+      margin: 0 auto;
+      color: $dark;
+
+      img {
+        width: 100%;
+        border-radius: 5px;
+        transition: all 250ms ease;
+
+        &:hover {
+          filter: brightness(70%);
+          transition: all 250ms ease;
+        }
+      }
+
+      .date {
+        margin: 8px 0;
+      }
+
+      .game-name {
+        text-decoration: none;
+        color: $dark;
+        font-weight: 600;
+        font-size: 1.3rem;
+        margin: 8px 0 16px 0;
+      }
+
+      .price {
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      .game-bottom {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+        align-items: center;
+
+        span {
+          padding-bottom: 5px;
+          border-bottom: 2px solid $red;
+        }
+
+        i {
+          font-size: 1.5rem;
+          color: $red;
         }
       }
     }

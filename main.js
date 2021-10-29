@@ -89,17 +89,37 @@ const lightboxModal = () =>{
     const prevBtn = document.querySelector('#lightbox-modal .fa-caret-left');
     const nextBtn = document.querySelector('#lightbox-modal .fa-caret-right');
     const images = document.querySelectorAll('.screenshot-container img');
-    console.log(images)
+    let globalIndex = 0;
 
     images.forEach((image,index) =>{
         image.addEventListener('click', () =>{
             modal.classList.add('show-modal');
             modalImg.src = `${imagesArray[index]}`;
+            globalIndex = index;
         })
     })
 
+    prevBtn.addEventListener('click', () =>{
+        globalIndex--;
+        if(globalIndex<0){
+            globalIndex = imagesArray.length-1;
+            modalImg.src = `${imagesArray[globalIndex]}`;
+        } else{
+            modalImg.src = `${imagesArray[globalIndex]}`;
+        }
+    })
+
+    nextBtn.addEventListener('click', () =>{
+        globalIndex++;
+        if(globalIndex>imagesArray.length-1){
+            globalIndex = 0;
+            modalImg.src = `${imagesArray[globalIndex]}`;
+        } else{
+            modalImg.src = `${imagesArray[globalIndex]}`;
+        }
+    })
+
     modal.addEventListener('click', e =>{
-        console.log(e.target.id == modal.id);
         if(e.target.id == modal.id){
             modal.classList.remove('show-modal');
         }

@@ -6,11 +6,9 @@ const hideNavOnScroll = () =>{
     window.addEventListener('scroll', () =>{
         if(window.pageYOffset > nav.clientHeight && window.matchMedia('(min-width:768px)').matches){
             nav.classList.add('hide-nav');
-            console.log('minwidth')
             navBackground.classList.remove('show-nav-background');
         } else if(window.matchMedia('(max-width:768px)').matches && window.pageYOffset > header.clientHeight){
             nav.classList.add('hide-nav');
-            console.log('maxwidth')
             navBackground.classList.remove('show-nav-background');
         }
          else{
@@ -241,6 +239,91 @@ const addBorderToLinks = () =>{
     })
 }
 
+const showLinks = () =>{
+    const links = document.querySelectorAll('#footer-tablet-links .link-container');
+    links.forEach((link) => {
+        link.addEventListener('click', () =>{
+            const linkContainer = link.querySelector('.link-list');
+            const arrowUp = link.querySelector('.fa-angle-up');
+            const arrowDown = link.querySelector('.fa-angle-down');
+                links.forEach(item =>{
+                    if(item!==link){
+                        if(item.firstElementChild.nextElementSibling === null){
+                            return;
+                        } else{
+                            console.log(item.firstElementChild.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling)
+                            item.firstElementChild.nextElementSibling.classList.remove('show-link');
+                            const itemArrowDown = item.firstElementChild.firstElementChild.nextElementSibling.firstElementChild;
+                            const itemArrowUp = item.firstElementChild.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling;
+                            itemArrowUp.classList.remove('toggle-arrow-up');
+                            itemArrowDown.classList.remove('toggle-arrow-down');
+                        }
+                    }
+                })
+                linkContainer.classList.toggle('show-link');
+                arrowUp.classList.toggle('toggle-arrow-up');
+                arrowDown.classList.toggle('toggle-arrow-down');
+        })
+    });
+}
+
+const otherGamesSlider = () =>{
+    const games = document.querySelectorAll('#games .game-container');
+    const prevBtn = document.querySelector('#games .fa-angle-left');
+    const nextBtn = document.querySelector('#games .fa-angle-right');
+    let translate = 0;
+
+    nextBtn.addEventListener('click', () =>{
+        if(window.matchMedia('(max-width:550px)').matches){
+            translate+=95;
+            console.log('fon')
+            if(translate>1100){
+                translate = 0;
+            }
+        } else if(window.matchMedia('(max-width:768px)').matches){
+            translate+=98;
+            console.log('tablet')
+            if(translate>500){
+                translate = 0;
+            }
+        } else {
+            translate +=99; 
+         if(translate > 200){
+            translate = 0
+        }
+        }
+        games.forEach(game =>{
+            game.style.transform = `translateX(-${translate}vw)`;
+        })
+    })
+
+    prevBtn.addEventListener('click', () =>{
+        if(window.matchMedia('(max-width:550px)').matches){
+            translate-=95;
+            console.log('fon')
+            if(translate<0){
+                translate = 1045;
+            }
+        } else if(window.matchMedia('(max-width:768px)').matches){
+            translate-=98;
+            console.log('tablet')
+            if(translate<0){
+                translate = 490;
+            }
+        } else{
+            translate -=100; 
+        if(translate<0){
+            translate = 200;
+        }
+        }
+        games.forEach(game =>{
+            game.style.transform = `translateX(-${translate}vw)`;
+        })
+    })
+}
+
+otherGamesSlider();
+showLinks();
 tabletDropdownFunction();
 removeSignUp();
 navSlide();
