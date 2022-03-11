@@ -14,7 +14,7 @@ Technologies used:
 
 ## Screen after search bar click
 
-![Screenshot 2022-03-11 at 21-09-39 Stardew Valley for Nintendo Switch - Nintendo Game Details](https://user-images.githubusercontent.com/71221268/157952938-13e6f136-f7cb-49ba-8e28-65eca44272e8.png)
+![Screenshot 2022-03-11 at 21-13-43 Stardew Valley for Nintendo Switch - Nintendo Game Details](https://user-images.githubusercontent.com/71221268/157953635-a3093e55-e76e-4683-a1be-e38f73eddbae.png)
 
 
 ## Gallery Images Preview
