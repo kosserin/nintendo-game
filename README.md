@@ -7,5 +7,20 @@ Technologies used:
 - CSS (SCSS)
 - JavaScript
 
-[![Screenshot-2022-01-23-at-18-45-43-Stardew-Valley-for-Nintendo-Switch-Nintendo-Game-Details.png](https://i.postimg.cc/3ND2p6bm/Screenshot-2022-01-23-at-18-45-43-Stardew-Valley-for-Nintendo-Switch-Nintendo-Game-Details.png)](https://postimg.cc/N2ByvNtj)
-[![Screenshot-2022-01-23-at-18-45-57-Stardew-Valley-for-Nintendo-Switch-Nintendo-Game-Details.png](https://i.postimg.cc/rmHSDcgq/Screenshot-2022-01-23-at-18-45-57-Stardew-Valley-for-Nintendo-Switch-Nintendo-Game-Details.png)](https://postimg.cc/YG14P5JP)
+## Landing Page
+
+![Screenshot 2022-03-11 at 21-09-25 Stardew Valley for Nintendo Switch - Nintendo Game Details](https://user-images.githubusercontent.com/71221268/157952916-60820518-6f2f-4eb8-9467-55b6d181536d.png)
+
+
+## Screen after search bar click
+
+![Screenshot 2022-03-11 at 21-09-39 Stardew Valley for Nintendo Switch - Nintendo Game Details](https://user-images.githubusercontent.com/71221268/157952938-13e6f136-f7cb-49ba-8e28-65eca44272e8.png)
+
+
+## Gallery Images Preview
+![Screenshot 2022-03-11 at 21-10-05 Stardew Valley for Nintendo Switch - Nintendo Game Details](https://user-images.githubusercontent.com/71221268/157952955-d3600267-62bd-4eb6-8934-2cd92995903c.png)
+
+
+## Mobile Preview
+
+![Screenshot 2022-03-11 at 21-12-53 Stardew Valley for Nintendo Switch - Nintendo Game Details](https://user-images.githubusercontent.com/71221268/157953405-09249e64-1e71-4e7e-8cb7-26e65c0a1657.png)
